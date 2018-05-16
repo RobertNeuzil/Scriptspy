@@ -1,0 +1,3 @@
+import mymodules
+
+print (test)
