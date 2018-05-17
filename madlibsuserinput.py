@@ -6,8 +6,15 @@ verb = input("please enter a verb:")
 place = input("please enter a place:")
 planet = input("please enter a planet:")
 task = input("please enter a task:")
-number = input("please enter a number:")
-	
+try:
+        number = int(input("please enter a number:"))
+        
+except ValueError:
+        number = int(input("please enter an integer:"))
+else:
+        number = 2
+       
+
 print (f"""
 The meatballs at our school are very {adjective}. They look very {color} and taste very 
 {adjectivetwo}. Last week, I swore I saw one get up and {verb}! They must come from {place}.
