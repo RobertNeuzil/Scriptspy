@@ -1,8 +1,5 @@
 class Dog():
 
-	animal = "Dog"
-	treats = 1
-
 	def __init__(self, name, breed, coat):
 		self.name = name
 		self.breed = breed
@@ -11,11 +8,27 @@ class Dog():
 	def do_trick(self):
 		self.treats = self.treats + 1
 
-dog_1 = Dog("Roscoe", "Doberman", "White")
-dog_2 = Dog("Angel", "Terrier", "Black")
-dog_3 = Dog("Dundy", "Pitbull", "Brown")
+	@classmethod 
+	def set_class_amount(cls, treats, animals):
+		cls.treats = treats 
+		cls.animals = animals
 
-print(f"{dog_2.name} gets {dog_2.treats} treat.")
-dog_2.do_trick()
-print (f"{dog_2.name} did a trick so now she gets {str(dog_2.treats)} treats.")
-print(f"{dog_3.name}'s email is {dog_3.email}")
+Dog.set_class_amount(333, "dogs") # class methods effects the whole class as opposed to each instance
+xyz = Dog("Rodrigo", "Doberman", "White")
+lol = Dog("Crayon", "Boxer", "Brown")
+nvm = Dog("Scooter", "Pitbull", "White")
+abc = Dog("Spot", "Pitbull", "White")
+print (xyz.treats)
+xyz.do_trick()
+print (xyz.treats)
+print (lol.treats)
+print (nvm.treats)
+print (abc.treats)
+
+
+
+
+
+
+
+
