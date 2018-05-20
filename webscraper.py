@@ -1,8 +1,13 @@
-import requests
 from bs4 import BeautifulSoup
-
-url = ""
-full_page = requests.get(url)
-text = full_page.text
-soup = BeautifulSoup(text)
-print (soup)
+import requests
+x = 1
+y = 120
+while x <= 10:
+	url = "https://jacksonville.craigslist.org/search/cta?s=" + str(y) 
+	source = requests.get(url)
+	text_data = source.text 
+	soup = BeautifulSoup(text_data)
+	for title in soup.find_all(class_="result-title hdrlnk"):
+		print (title.text)
+	x += 1
+	y += 120
