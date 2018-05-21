@@ -8,6 +8,6 @@ and write a program that prints out all the elements of the list that are less t
 
 a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
-for num in a:
-	if num < 5:
-		print (num)
+for num in a:   # for loop that looks through entire list
+	if num < 5: #if evaluates to True and num < 5
+		print (num) # num gets printed

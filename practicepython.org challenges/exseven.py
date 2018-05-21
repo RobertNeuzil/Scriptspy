@@ -3,6 +3,6 @@
 #Write one line of Python that takes this list a and makes a new list that has only the even 
 #elements of this list in it.
 
-a = [1,4,9,16,25,36,49,64,81,100]
-a = [a for a in a if a % 2 == 0]
-print (a)
+a = [1,4,9,16,25,36,49,64,81,100] # example list
+a = [a for a in a if a % 2 == 0] # list comprehension to use one line of code
+print (a) # prints to console
