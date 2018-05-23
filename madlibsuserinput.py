@@ -6,13 +6,18 @@ verb = input("please enter a verb:")
 place = input("please enter a place:")
 planet = input("please enter a planet:")
 task = input("please enter a task:")
-try:
-        number = int(input("please enter a number:"))
+while True:
+	try:
+		number = input("please enter a number:")
+		number = int(number)
+		break
+	except ValueError:
+		number = input("please enter an integer, the previous number was not proper:")
+		break
+	else:            
+		number = 4
         
-except ValueError:
-        number = int(input("please enter an integer:"))
-else:
-        number = 2
+
        
 
 print (f"""
