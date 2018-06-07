@@ -23,3 +23,30 @@ something = trythis("Something") #something has now been committed to memory to 
 something("middle")
 something("car")
 
+
+######################################################################################################decorators######
+
+
+def decorator(f):  # the decorator needs an implicit argument that will serve as the function you're calling in the nested wrapper function
+
+	def wrapper(*args):
+		print ("Before function called")
+		f(*args)
+		print ("After function called")
+	return wrapper # no parentheses because that would execute function. Only looking to return the wrapper function
+	#within the decorator in order to later pass in f() and then execute wrapper + f() together, at once. They will all be
+	# executed when the decorated function is called
+
+
+@decorator
+def printname(name):
+	print (name)
+
+printname("Robert")
+
+
+
+
+
+
+
