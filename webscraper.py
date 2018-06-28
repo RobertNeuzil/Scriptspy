@@ -1,15 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
-
-x = 1
-while x < 20:
-	url = "http://redditlist.com/?page=" + str(x)
-	alldata = requests.get(url)
-	text = alldata.text
-	soup = BeautifulSoup(text, "html.parser")
-	for titles in soup.find_all(class_="sfw"):
-		f = open("namelist.txt", "a")
-		f.write(titles.text)
-		f.close()
-	x += 1
+site = requests.get(
+"https://www.yellowpages.com/search?search_terms=burger&geo_location_terms=Jacksonville%2C+FL")
+soup = BeautifulSoup(site.text, 'html.parser')
+for x in soup.find_all(class_="business-name"):
+	justname = x.text
+	print (justname)
