@@ -1,4 +1,4 @@
-def decorator_func(my_function):
+"""def decorator_func(my_function):
 
 	def wrapper_func(*args, **kwargs):
 
@@ -18,4 +18,56 @@ def display_info(name, age):
 
 
 test()
-display_info("Robert", 55)
+display_info("Robert", 55)"""
+
+
+
+
+def my_logger(original_function):
+	import logging
+	logging.basicConfig(filename=f'{original_function.__name__}', level = logging.INFO)
+
+	def wrapper(*args, **kwargs):
+		logging.info(
+			f'ran with args {args} and kwargs {kwargs}')
+
+		return original_function(*args, **kwargs)
+	return wrapper
+
+def my_timer (original_function):
+	import time
+	def wrapper(*args, **kwargs):
+		t1 = time.time()
+		result = original_function(*args, **kwargs)
+		t2 = time.time() - t1
+		print (f"{original_function} ran in {t2} seconds")
+	return wrapper
+
+
+import time
+
+
+@my_logger
+@my_timer
+def display_info(name, age):
+	time.sleep(5)
+	print (f"The name is {name} and the age is {age}")
+
+display_info("Robert", 27)
+display_info("Breanna", 78)
+display_info("Alicia", 17)
+display_info("Jason", 4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

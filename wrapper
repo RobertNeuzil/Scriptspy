@@ -1,0 +1,4 @@
+INFO:root:ran with args ('Robert', 27) and kwargs {}
+INFO:root:ran with args ('Breanna', 78) and kwargs {}
+INFO:root:ran with args ('Alicia', 17) and kwargs {}
+INFO:root:ran with args ('Jason', 4) and kwargs {}
