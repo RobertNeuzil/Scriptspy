@@ -1,22 +1,22 @@
 def decorator_func(my_func_test):
 	
 	def wrapper_func():
+		print (f"wrapper is executing this before executing {my_func_test.__name__}")
 		
-		return my_func_test
+		
+		return my_func_test()
 
 	return wrapper_func
 
-def test():
 
+
+@decorator_func
+def test():
 	print ("The test worked!")
 
-def test_again():
-	
-	print("The test worked again")
+@decorator_func
+def test_again_twice():
+	print ("The test worked a second time")
 
-
-first = test
-second = test_again
-
-first()
-second()
+test()
+test_again_twice()
