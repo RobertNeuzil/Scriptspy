@@ -1,22 +1,21 @@
-def decorator_func(my_func_test):
-	
-	def wrapper_func():
-		print (f"wrapper is executing this before executing {my_func_test.__name__}")
-		
-		
-		return my_func_test()
+def decorator_func(my_function):
 
+	def wrapper_func(*args, **kwargs):
+
+		print (f"This is the wrapper function executiong before {my_function.__name__}")
+
+		return my_function(*args, **kwargs)
 	return wrapper_func
-
 
 
 @decorator_func
 def test():
-	print ("The test worked!")
+	print ("This is a test that worked")
 
 @decorator_func
-def test_again_twice():
-	print ("The test worked a second time")
+def display_info(name, age):
+	print (f"This function is running with the [ {name} ] and [ {age} ] arguments")
+
 
 test()
-test_again_twice()
+display_info("Robert", 55)
