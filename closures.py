@@ -9,6 +9,4 @@ def outer_func(msg):
 my_func = outer_func("Hello")
 lol = outer_func("Goodbye")
 
-my_func()
-lol()
 
