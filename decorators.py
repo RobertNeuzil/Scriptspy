@@ -50,7 +50,7 @@ import time
 @my_logger
 @my_timer
 def display_info(name, age):
-	time.sleep(5)
+	time.sleep(2)
 	print (f"The name is {name} and the age is {age}")
 
 display_info("Robert", 27)
